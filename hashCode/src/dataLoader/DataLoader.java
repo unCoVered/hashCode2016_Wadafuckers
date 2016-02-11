@@ -1,12 +1,14 @@
 package dataLoader;
 
-import Helper.Location;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import Helper.Location;
+import bean.ProductBean;
+import bean.WarehouseBean;
 
 public class DataLoader {
 
@@ -65,26 +67,34 @@ public class DataLoader {
         int numberOfWarehouses = sc.nextInt();
         sc.nextLine();  //End line
         Helper.Location location;
-        List<Integer> productStore;
 
-        for(int i = 0; i<numberOfWarehouses; i++)
+        for (int i = 0; i < numberOfWarehouses; i++)
         {
             location = getLocation();
-            productStore = getProductStore();
             //create warehouse with that info
+        
+            WarehouseBean warehouseBean = new WarehouseBean();
+            warehouseBean.setId(String.valueOf(i));
+            warehouseBean.setCoordenates(location);
+            
+            fillWarehouseProductsInfo(warehouseBean);
         }
-
     }
 
-    private static List<Integer> getProductStore ()
+    private static void fillWarehouseProductsInfo (WarehouseBean warehouseBean)
     {
-        List<Integer> productStore = new ArrayList<Integer>();
-        for(int i = 0; i<productWeigh.size(); i++ )
+        for(int i = 0; i < productWeigh.size(); i++ )
         {
-            productStore.add(sc.nextInt());
+        	int quantity = sc.nextInt();
+        	
+        	ProductBean productBean = new ProductBean();
+        	productBean.setId(String.valueOf(i));
+        	productBean.getWarehousesQuantity().put(warehouseBean, String.valueOf(quantity));
+        	
+            warehouseBean.getProductList().put(productBean, String.valueOf(quantity));
         }
+        
         sc.nextLine();  //End line
-        return productStore;
     }
 
     private static Location getLocation ()

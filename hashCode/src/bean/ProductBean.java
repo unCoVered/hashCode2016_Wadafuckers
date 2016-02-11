@@ -1,5 +1,6 @@
 package bean;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ProductBean extends BaseBean
@@ -8,7 +9,9 @@ public class ProductBean extends BaseBean
 	private String weight;
 	
 	public ProductBean ()
-	{}
+	{
+		warehousesQuantity = new HashMap<WarehouseBean, String>();
+	}
 	
 	public Map<WarehouseBean, String> getWarehousesQuantity ()
 	{

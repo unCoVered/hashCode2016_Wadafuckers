@@ -13,5 +13,4 @@ public class BaseBean
 	{
 		this.id = id;
 	}
-	
 }
