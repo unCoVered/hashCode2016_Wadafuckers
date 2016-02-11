@@ -6,16 +6,16 @@ import Helper.Location;
 
 public class OrderBean extends BaseBean
 {
-	private List<ProductBean> itemsList;
+	private List<String> itemsList;
 	private Location deliveryLocation;
 	private List<DronBean> deliveryDrones;
 
-	public List<ProductBean> getItemsList ()
+	public List<String> getItemsList ()
 	{
 		return itemsList;
 	}
 
-	public void setItemsList (List<ProductBean> itemsList)
+	public void setItemsList (List<String> itemsList)
 	{
 		this.itemsList = itemsList;
 	}
