@@ -120,6 +120,4 @@ public class DataLoader {
         sc.nextLine();  //End line
     }
 
-
-    
 }
