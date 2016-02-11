@@ -17,6 +17,3 @@ tarjet
 *.iml
 .idea
 src/*.iml
-
-hascode/.project
-hascode/.classpath
