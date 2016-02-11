@@ -1,4 +1,4 @@
-package dataLoader;
+package loader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
