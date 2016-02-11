@@ -14,5 +14,6 @@ hs_err_pid*
 bin
 tarjet
 # 
-.iml
+*.iml
 .idea
+src/*.iml
