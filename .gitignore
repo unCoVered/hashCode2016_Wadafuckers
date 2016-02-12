@@ -17,3 +17,8 @@ tarjet
 *.iml
 .idea
 src/*.iml
+
+
+hashCode/.classpath
+hashCOde/.project
+
